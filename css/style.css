@@ -1,0 +1,371 @@
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-border: #e0ddd6;
+  --color-text: #2a2a28;
+  --color-muted: #7a766d;
+  --color-accent: #3d6b5c;
+  --color-accent-hover: #2f5347;
+  --color-error: #b3413a;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", "Segoe UI", system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.tab-btn:hover {
+  background: var(--color-bg);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+.view {
+  animation: fade-in 0.15s ease-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.intro {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.intro a {
+  color: var(--color-accent);
+}
+
+.file-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.file-label {
+  display: none;
+}
+
+input[type="file"] {
+  font-size: 0.95rem;
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.9rem;
+}
+
+.saved-books-list {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.saved-books-list h2 {
+  font-size: 1.05rem;
+}
+
+.saved-books {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.saved-book-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.saved-book-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.saved-book-progress {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.reader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.book-title {
+  font-weight: 600;
+}
+
+.progress-text {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0 32px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--color-accent);
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+.sentence-en {
+  font-size: 1.5rem;
+  padding: 32px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  min-height: 3em;
+}
+
+.btn-translate {
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-translate:hover {
+  background: var(--color-accent-hover);
+}
+
+.translation-panel {
+  margin-top: 20px;
+  padding: 20px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.translation-panel h3 {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 16px 0 6px;
+}
+
+.translation-panel h3:first-child {
+  margin-top: 0;
+}
+
+.words-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.words-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--color-bg);
+  border-radius: 6px;
+  flex-wrap: wrap;
+}
+
+.word-entry {
+  flex: 1;
+}
+
+.btn-vocab-add {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border: 1px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-vocab-add:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-vocab-add:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  gap: 12px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.nav-buttons button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.nav-buttons button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 4px;
+}
+
+.vocab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vocab-item {
+  padding: 14px 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.vocab-word-line {
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding-right: 48px;
+}
+
+.vocab-meta {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.btn-vocab-delete {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  color: var(--color-error);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1c1a;
+    --color-surface: #262624;
+    --color-border: #3a3936;
+    --color-text: #eae7df;
+    --color-muted: #9c988e;
+    --color-accent: #6fae98;
+    --color-accent-hover: #85c2ac;
+    --color-error: #e08279;
+  }
+
+  .btn-translate {
+    color: #16211d;
+  }
+
+  .btn-vocab-add:hover {
+    color: #16211d;
+  }
+}

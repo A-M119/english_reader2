@@ -1,0 +1,60 @@
+{
+  "title": "Alice's Adventures in Wonderland (抜粋・サンプル)",
+  "sentences": [
+    {
+      "id": 0,
+      "en": "Alice was beginning to get very tired of sitting by her sister on the bank.",
+      "ja": "アリスは、土手でお姉さんの隣に座っていることに、だんだん退屈してきていた。",
+      "words": [
+        { "word": "beginning", "meaning": "〜し始めている（beginの現在分詞。be動詞＋beginningで「し始めている」という進行のニュアンス）" },
+        { "word": "tired of", "meaning": "〜に飽きた、うんざりした" },
+        { "word": "bank", "meaning": "土手、川岸（「銀行」ではない点に注意）" }
+      ],
+      "structure": "\"Alice was beginning to get tired of -ing\" で「〜するのにだんだん飽きてきていた」という意味。was beginning は過去進行形で、変化が進行中であることを表す。"
+    },
+    {
+      "id": 1,
+      "en": "Once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it.",
+      "ja": "一、二度お姉さんが読んでいる本をのぞき見たが、そこには絵も会話文もなかった。",
+      "words": [
+        { "word": "once or twice", "meaning": "一、二度、何度か" },
+        { "word": "peep into", "meaning": "〜をのぞき見る" },
+        { "word": "conversation", "meaning": "会話（ここでは本の中の「会話文・セリフ」の意味）" }
+      ],
+      "structure": "had peeped は過去完了形で、文全体の過去（but以降）より前に起きた出来事を表す。the book の後にthatが省略された関係代名詞節 \"(that) her sister was reading\" が続いている。"
+    },
+    {
+      "id": 2,
+      "en": "There was nothing so very remarkable in that.",
+      "ja": "それ自体は、特に取り立てて言うほど珍しいことではなかった。",
+      "words": [
+        { "word": "remarkable", "meaning": "注目に値する、驚くべき" },
+        { "word": "in that", "meaning": "その点において、そのことについて" }
+      ],
+      "structure": "There was nothing so ... という「特に〜なものは何もなかった」という否定的な強調表現。soはvery remarkableを強めている。"
+    },
+    {
+      "id": 3,
+      "en": "In another moment down went Alice after it, never once considering how in the world she was to get out again.",
+      "ja": "次の瞬間、アリスはそのウサギを追ってまっさかさまに飛び込んでいった。あとでどうやって出ればいいかなど、まったく考えもせずに。",
+      "words": [
+        { "word": "in another moment", "meaning": "次の瞬間には" },
+        { "word": "down went Alice", "meaning": "アリスは下へ向かって行った（倒置構文。通常はAlice went downの語順）" },
+        { "word": "never once", "meaning": "一度も〜ない、まったく〜ない" },
+        { "word": "how in the world", "meaning": "一体どうやって（inserted phraseで強調）" }
+      ],
+      "structure": "\"down went Alice\" は強調のための倒置（本来はAlice went down）。文末のconsideringは分詞構文で「〜することなく」という付帯状況を表す。"
+    },
+    {
+      "id": 4,
+      "en": "The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down.",
+      "ja": "そのウサギの穴はしばらくトンネルのようにまっすぐ続いていたが、それから急に下へ落ち込んでいた。",
+      "words": [
+        { "word": "straight on", "meaning": "まっすぐに、そのまま前へ" },
+        { "word": "for some way", "meaning": "しばらくの間、ある程度の距離" },
+        { "word": "dip down", "meaning": "急に下がる、落ち込む" }
+      ],
+      "structure": "went straight on と dipped suddenly down の2つの動詞句がandで並列に結ばれている。主語はThe rabbit-holeで共通。"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英語小説リーダー</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>英語小説リーダー</h1>
+    <nav class="tabs">
+      <button id="tab-reader" type="button" class="tab-btn">読書</button>
+      <button id="tab-vocab" type="button" class="tab-btn">単語帳</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-upload" class="view">
+      <p class="intro">
+        原文・和訳・単語の意味・文構造をまとめたJSONファイルを読み込んで学習を始めます。<br>
+        JSONの作り方は <a href="docs/json-format.md">docs/json-format.md</a> を参照してください。まずは
+        <a href="sample/sample-book.json" download>サンプルファイル</a> で試すこともできます。
+      </p>
+
+      <div class="file-input-row">
+        <label for="file-input" class="file-label">JSONファイルを選択</label>
+        <input type="file" id="file-input" accept=".json">
+      </div>
+      <p id="upload-error" class="error" hidden></p>
+
+      <div id="saved-books-list" class="saved-books-list" hidden></div>
+    </section>
+
+    <section id="view-reader" class="view" hidden>
+      <div class="reader-header">
+        <div id="book-title" class="book-title"></div>
+        <div id="progress-text" class="progress-text"></div>
+      </div>
+      <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div id="sentence-en" class="sentence-en"></div>
+
+      <button id="btn-translate" type="button" class="btn-translate">翻訳</button>
+
+      <div id="translation-panel" class="translation-panel" hidden>
+        <h3>和訳</h3>
+        <p id="translation-ja"></p>
+
+        <h3>単語の意味</h3>
+        <ul id="translation-words" class="words-list"></ul>
+
+        <h3>文構造</h3>
+        <p id="translation-structure"></p>
+      </div>
+
+      <div class="nav-buttons">
+        <button id="btn-prev" type="button">◀ 前へ</button>
+        <button id="btn-next" type="button">次へ ▶</button>
+      </div>
+
+      <div class="footer-links">
+        <button id="btn-restart" type="button" class="link-btn">最初から読み直す</button>
+        <button id="btn-change-file" type="button" class="link-btn">別のファイルを読み込む</button>
+      </div>
+    </section>
+
+    <section id="view-vocab" class="view" hidden>
+      <h2>単語帳</h2>
+      <ul id="vocab-list" class="vocab-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/fileLoader.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
