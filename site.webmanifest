@@ -1,0 +1,13 @@
+{
+  "name": "英語小説リーダー",
+  "short_name": "英語リーダー",
+  "description": "英語小説を1文ずつ読みながら、和訳・単語解説・文構造を確認できる学習アプリ",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf9f6",
+  "theme_color": "#3d6b5c",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

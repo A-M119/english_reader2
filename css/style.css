@@ -44,7 +44,8 @@ body {
 }
 
 .tab-btn {
-  padding: 8px 16px;
+  padding: 10px 16px;
+  min-height: 44px;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   border-radius: var(--radius);
@@ -59,7 +60,7 @@ body {
 main {
   max-width: 720px;
   margin: 0 auto;
-  padding: 24px 20px 80px;
+  padding: 24px 20px calc(100px + env(safe-area-inset-bottom));
 }
 
 .view {
@@ -181,7 +182,9 @@ input[type="file"] {
 }
 
 .sentence-en {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
   font-size: 1.5rem;
+  line-height: 1.6;
   padding: 32px 24px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -191,7 +194,8 @@ input[type="file"] {
 
 .btn-translate {
   margin-top: 20px;
-  padding: 10px 24px;
+  padding: 12px 24px;
+  min-height: 48px;
   font-size: 1rem;
   border: none;
   border-radius: var(--radius);
@@ -247,8 +251,9 @@ input[type="file"] {
 }
 
 .btn-vocab-add {
-  padding: 4px 10px;
-  font-size: 0.8rem;
+  padding: 8px 14px;
+  min-height: 36px;
+  font-size: 0.85rem;
   border: 1px solid var(--color-accent);
   background: transparent;
   color: var(--color-accent);
@@ -269,18 +274,29 @@ input[type="file"] {
 
 .nav-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 32px;
+  justify-content: center;
   gap: 12px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
 .nav-buttons button {
   flex: 1;
-  padding: 12px;
+  padding: 14px;
   font-size: 1rem;
+  min-height: 48px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: var(--color-bg);
   cursor: pointer;
 }
 
@@ -330,7 +346,7 @@ input[type="file"] {
 .vocab-word-line {
   font-weight: 600;
   margin-bottom: 4px;
-  padding-right: 48px;
+  padding-right: 56px;
 }
 
 .vocab-meta {
@@ -340,13 +356,41 @@ input[type="file"] {
 
 .btn-vocab-delete {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 4px;
+  right: 4px;
+  padding: 10px 12px;
   border: none;
   background: none;
   color: var(--color-error);
   cursor: pointer;
   font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 12px 16px;
+  }
+
+  .app-header h1 {
+    font-size: 1.05rem;
+  }
+
+  main {
+    padding: 20px 16px calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .sentence-en {
+    font-size: 1.25rem;
+    padding: 24px 18px;
+  }
+
+  .btn-translate {
+    width: 100%;
+  }
+
+  .translation-panel {
+    padding: 16px 18px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
