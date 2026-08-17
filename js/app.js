@@ -55,10 +55,28 @@ function refreshSavedBooksList() {
   });
 }
 
+function refreshLibraryList() {
+  fetch("books/manifest.json")
+    .then((res) => (res.ok ? res.json() : { books: [] }))
+    .then((manifest) => {
+      Render.renderLibraryList(manifest.books || [], (book) => {
+        Render.showUploadError("");
+        FileLoader.loadBookFromUrl(book.path)
+          .then((loaded) => startBook(loaded))
+          .catch((err) => Render.showUploadError(err.message));
+      });
+    })
+    .catch(() => {
+      // 本棚が読み込めない場合（file://で開いている場合など）は静かに非表示のままにする
+      Render.renderLibraryList([], () => {});
+    });
+}
+
 function goToUploadView() {
   document.getElementById("file-input").value = "";
   Render.showUploadError("");
   refreshSavedBooksList();
+  refreshLibraryList();
   Render.showView("upload");
 }
 

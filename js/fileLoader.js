@@ -29,6 +29,20 @@ function normalizeBookData(data) {
   };
 }
 
+function parseAndValidate(jsonText) {
+  let data;
+  try {
+    data = JSON.parse(jsonText);
+  } catch (e) {
+    throw new Error("JSONとして読み込めませんでした。ファイル形式を確認してください。");
+  }
+  const error = validateBookData(data);
+  if (error) {
+    throw new Error(error);
+  }
+  return normalizeBookData(data);
+}
+
 function loadBookFile(file) {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -37,19 +51,11 @@ function loadBookFile(file) {
     }
     const reader = new FileReader();
     reader.onload = () => {
-      let data;
       try {
-        data = JSON.parse(reader.result);
+        resolve(parseAndValidate(reader.result));
       } catch (e) {
-        reject(new Error("JSONとして読み込めませんでした。ファイル形式を確認してください。"));
-        return;
+        reject(e);
       }
-      const error = validateBookData(data);
-      if (error) {
-        reject(new Error(error));
-        return;
-      }
-      resolve(normalizeBookData(data));
     };
     reader.onerror = () => {
       reject(new Error("ファイルの読み込み中にエラーが発生しました。"));
@@ -58,6 +64,16 @@ function loadBookFile(file) {
   });
 }
 
+function loadBookFromUrl(url) {
+  return fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error(`本の読み込みに失敗しました (${res.status})。`);
+      return res.text();
+    })
+    .then((text) => parseAndValidate(text));
+}
+
 const FileLoader = {
   loadBookFile,
+  loadBookFromUrl,
 };

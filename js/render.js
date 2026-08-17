@@ -63,6 +63,43 @@ function renderSavedBooksList(books, onResume) {
   container.appendChild(hint);
 }
 
+function renderLibraryList(books, onSelect) {
+  const container = document.getElementById("library-list");
+  clearChildren(container);
+
+  if (!books || books.length === 0) {
+    container.hidden = true;
+    return;
+  }
+  container.hidden = false;
+
+  const heading = document.createElement("h2");
+  heading.textContent = "本棚から開く";
+  container.appendChild(heading);
+
+  const list = document.createElement("ul");
+  list.className = "saved-books";
+  books.forEach((book) => {
+    const item = document.createElement("li");
+
+    const btn = document.createElement("button");
+    btn.className = "saved-book-btn";
+    btn.type = "button";
+
+    const titleSpan = document.createElement("span");
+    titleSpan.className = "saved-book-title";
+    titleSpan.textContent = book.title;
+
+    btn.appendChild(titleSpan);
+    btn.addEventListener("click", () => onSelect(book));
+
+    item.appendChild(btn);
+    list.appendChild(item);
+  });
+
+  container.appendChild(list);
+}
+
 function renderSentence(sentence) {
   document.getElementById("sentence-en").textContent = sentence.en;
 }
@@ -171,6 +208,7 @@ function showView(viewName) {
 const Render = {
   showUploadError,
   renderSavedBooksList,
+  renderLibraryList,
   renderSentence,
   renderProgress,
   renderTranslationPanel,

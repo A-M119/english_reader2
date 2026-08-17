@@ -1,0 +1,6 @@
+{
+  "books": [
+    { "title": "Alice's Adventures in Wonderland (Chapter I)", "path": "books/alice-in-wonderland.json" },
+    { "title": "サンプル（動作確認用）", "path": "sample/sample-book.json" }
+  ]
+}
