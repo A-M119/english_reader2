@@ -10,6 +10,9 @@
         { "word": "tired of", "meaning": "〜に飽きた、うんざりした" },
         { "word": "bank", "meaning": "土手、川岸（「銀行」ではない点に注意）" }
       ],
+      "glossary": [
+        { "word": "bank", "meaning": "土手、川岸（「銀行」ではない）" }
+      ],
       "structure": "\"Alice was beginning to get tired of -ing\" で「〜するのにだんだん飽きてきていた」という意味。was beginning は過去進行形で、変化が進行中であることを表す。"
     },
     {
@@ -21,6 +24,9 @@
         { "word": "peep into", "meaning": "〜をのぞき見る" },
         { "word": "conversation", "meaning": "会話（ここでは本の中の「会話文・セリフ」の意味）" }
       ],
+      "glossary": [
+        { "word": "peeped", "meaning": "のぞき見た（peep の過去分詞）" }
+      ],
       "structure": "had peeped は過去完了形で、文全体の過去（but以降）より前に起きた出来事を表す。the book の後にthatが省略された関係代名詞節 \"(that) her sister was reading\" が続いている。"
     },
     {
@@ -31,6 +37,7 @@
         { "word": "remarkable", "meaning": "注目に値する、驚くべき" },
         { "word": "in that", "meaning": "その点において、そのことについて" }
       ],
+      "glossary": [],
       "structure": "There was nothing so ... という「特に〜なものは何もなかった」という否定的な強調表現。soはvery remarkableを強めている。"
     },
     {
@@ -43,6 +50,7 @@
         { "word": "never once", "meaning": "一度も〜ない、まったく〜ない" },
         { "word": "how in the world", "meaning": "一体どうやって（inserted phraseで強調）" }
       ],
+      "glossary": [],
       "structure": "\"down went Alice\" は強調のための倒置（本来はAlice went down）。文末のconsideringは分詞構文で「〜することなく」という付帯状況を表す。"
     },
     {
@@ -53,6 +61,9 @@
         { "word": "straight on", "meaning": "まっすぐに、そのまま前へ" },
         { "word": "for some way", "meaning": "しばらくの間、ある程度の距離" },
         { "word": "dip down", "meaning": "急に下がる、落ち込む" }
+      ],
+      "glossary": [
+        { "word": "dipped", "meaning": "急に下がった（dip の過去形）" }
       ],
       "structure": "went straight on と dipped suddenly down の2つの動詞句がandで並列に結ばれている。主語はThe rabbit-holeで共通。"
     }

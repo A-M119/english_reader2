@@ -11,6 +11,10 @@
         { "word": "peeped into", "meaning": "~をのぞき見た" },
         { "word": "what is the use of", "meaning": "~が何の役に立つのか" }
       ],
+      "glossary": [
+        { "word": "bank", "meaning": "土手、川岸（「銀行」ではない）" },
+        { "word": "peeped", "meaning": "のぞき見た（peep の過去分詞）" }
+      ],
       "structure": "\"was beginning to get tired of A, and of B\" で「Aにも、Bにもだんだん飽きてきていた」。コロン(:)以降で具体的状況を説明し、最後は\"thought Alice\"という挿入句をはさんで引用文が続く。"
     },
     {
@@ -21,6 +25,11 @@
       "words": [
         { "word": "worth the trouble", "meaning": "~する価値がある、手間に見合う" },
         { "word": "whether A would be worth B", "meaning": "AがBに見合うかどうか" }
+      ],
+      "glossary": [
+        { "word": "stupid", "meaning": "頭がぼんやりした（ここでは「ばかな」より「ぼーっとした」）" },
+        { "word": "daisy-chain", "meaning": "ヒナギクを編んでつないだ花輪" },
+        { "word": "daisies", "meaning": "ヒナギク（daisy の複数形）" }
       ],
       "structure": "\"whether A would be worth B\" で「AがBに見合うかどうか」という間接疑問。when suddenly...は「まさにその時、突然〜」という劇的な転換を表す。"
     },
@@ -35,6 +44,12 @@
         { "word": "flashed across her mind", "meaning": "ふと心に浮かんだ" },
         { "word": "burning with curiosity", "meaning": "好奇心に燃えて" }
       ],
+      "glossary": [
+        { "word": "occurred", "meaning": "（occur to 人で）〜の頭に浮かんだ" },
+        { "word": "waistcoat-pocket", "meaning": "チョッキのポケット" },
+        { "word": "pop", "meaning": "ひょいと（急に）入る" },
+        { "word": "hedge", "meaning": "生け垣" }
+      ],
       "structure": "セミコロンで3つの節がつながる長い一文。\"nor did Alice think...\" は否定の倒置（notを受けて主語と助動詞が入れ替わる）。\"for it flashed across her mind that...\" のforは「というのも~だから」という理由を表す接続詞。"
     },
     {
@@ -47,6 +62,7 @@
         { "word": "never once", "meaning": "一度も~ない" },
         { "word": "how in the world", "meaning": "一体どうやって" }
       ],
+      "glossary": [],
       "structure": "強調のための倒置\"down went Alice\"（通常はAlice went down）。文末のconsideringは分詞構文で「~することもなく」という付帯状況。"
     },
     {
@@ -58,6 +74,10 @@
         { "word": "dipped suddenly down", "meaning": "急に下がった" },
         { "word": "so suddenly that", "meaning": "あまりに急だったので~" },
         { "word": "found herself falling", "meaning": "気づくと落下していた" }
+      ],
+      "glossary": [
+        { "word": "dipped", "meaning": "急に下がった（dip の過去形）" },
+        { "word": "well", "meaning": "井戸（「よく」ではない）" }
       ],
       "structure": "\"so suddenly that...\" は「あまりに~なので…」という結果を表す構文。find oneself -ingで「気づくと~している」。"
     },
@@ -71,6 +91,10 @@
         { "word": "for", "meaning": "というのも~だから（理由の等位接続詞）" },
         { "word": "plenty of time", "meaning": "たっぷりの時間" }
       ],
+      "glossary": [
+        { "word": "well", "meaning": "井戸" },
+        { "word": "about", "meaning": "（look about で）辺りを、周りを" }
+      ],
       "structure": "\"Either A, or B\" の相関構文。forは理由を表す等位接続詞（becauseに近い）。"
     },
     {
@@ -82,6 +106,10 @@
         { "word": "make out", "meaning": "~を見分ける、理解する" },
         { "word": "too...to", "meaning": "~すぎて…できない" },
         { "word": "here and there", "meaning": "あちこちに" }
+      ],
+      "glossary": [
+        { "word": "cupboards", "meaning": "戸棚（cupboard の複数形。発音は「カバード」）" },
+        { "word": "pegs", "meaning": "掛けくぎ（peg の複数形）" }
       ],
       "structure": "セミコロンで3つの独立節（first...then...here and there...）が時系列に並ぶ。\"too dark to see\" はtoo...to構文。"
     },
@@ -95,6 +123,12 @@
         { "word": "for fear of -ing", "meaning": "~するといけないので、~を恐れて" },
         { "word": "manage to", "meaning": "何とか~する" }
       ],
+      "glossary": [
+        { "word": "jar", "meaning": "（広口の）びん、つぼ" },
+        { "word": "labelled", "meaning": "ラベルが貼られた（label の過去分詞。イギリス式つづり）" },
+        { "word": "marmalade", "meaning": "マーマレード" },
+        { "word": "underneath", "meaning": "下に、下の方に" }
+      ],
       "structure": "\"for fear of killing somebody\" は「~するといけないから」という目的・懸念を表す表現。"
     },
     {
@@ -107,6 +141,9 @@
         { "word": "how brave they'll think me", "meaning": "彼らは私をどれほど勇敢だと思うだろう" },
         { "word": "very likely", "meaning": "十中八九、おそらく" }
       ],
+      "glossary": [
+        { "word": "tumbling", "meaning": "転げ落ちること（tumble の -ing 形）" }
+      ],
       "structure": "引用文の中に感嘆文が3つ連続する構造。最後の(Which was very likely true.)は、前の文全体を先行詞とする関係代名詞whichの非制限用法（独立した文のように使われる口語的用法）。"
     },
     {
@@ -117,6 +154,7 @@
       "words": [
         { "word": "down", "meaning": "下へ（繰り返しで落下の長さを強調）" }
       ],
+      "glossary": [],
       "structure": "単語の3回繰り返しのみで文を構成し、落下がどこまでも続く様子を表現している。"
     },
     {
@@ -128,6 +166,7 @@
         { "word": "come to an end", "meaning": "終わる" },
         { "word": "never", "meaning": "決して~ない" }
       ],
+      "glossary": [],
       "structure": "Wouldではじまる疑問文だが、実際には「いつまでも終わらないように感じられた」という心情を表す修辞疑問。"
     },
     {
@@ -138,6 +177,9 @@
       "words": [
         { "word": "I wonder", "meaning": "~かしら、~だろうか" },
         { "word": "by this time", "meaning": "今頃までに" },
+        { "word": "aloud", "meaning": "声に出して" }
+      ],
+      "glossary": [
         { "word": "aloud", "meaning": "声に出して" }
       ],
       "structure": "\"I wonder how many miles...\" は間接疑問文（wonderの目的語としてhow many milesの疑問文が名詞節になっている）。"
@@ -152,6 +194,13 @@
         { "word": "showing off", "meaning": "見せびらかす、披露する" },
         { "word": "Latitude / Longitude", "meaning": "緯度／経度" }
       ],
+      "glossary": [
+        { "word": "centre", "meaning": "中心（center のイギリス式つづり）" },
+        { "word": "learnt", "meaning": "学んだ（learn の過去分詞。イギリス式）" },
+        { "word": "Latitude", "meaning": "緯度" },
+        { "word": "Longitude", "meaning": "経度" },
+        { "word": "grand", "meaning": "立派な、堂々とした" }
+      ],
       "structure": "ダッシュ(—)で区切られた独り言のセリフの間に、地の文の説明(for, you see...)が挿入される構造。it was good practice to say it over のitは形式主語でto say it overが真主語。"
     },
     {
@@ -161,6 +210,9 @@
       "ja": "しばらくして、彼女はまた話し始めた。",
       "words": [
         { "word": "presently", "meaning": "まもなく、しばらくして" }
+      ],
+      "glossary": [
+        { "word": "Presently", "meaning": "やがて、まもなく（古風な用法。現代米語では「現在」の意味も）" }
       ],
       "structure": "単純な過去形の短文。"
     },
@@ -174,6 +226,15 @@
         { "word": "curtsey", "meaning": "お辞儀、お辞儀をする" },
         { "word": "ignorant", "meaning": "無知な" }
       ],
+      "glossary": [
+        { "word": "downward", "meaning": "下向きに" },
+        { "word": "Antipathies", "meaning": "反感（antipathy の複数形）。本当は Antipodes「地球の裏側」と言いたかったアリスの言い間違い" },
+        { "word": "Ma'am", "meaning": "奥様（Madam の短縮形）" },
+        { "word": "curtsey", "meaning": "（女性が）ひざを曲げてお辞儀する" },
+        { "word": "fancy", "meaning": "想像してごらん、〜なんて（驚きを表す命令形）" },
+        { "word": "ignorant", "meaning": "無知な、物を知らない" },
+        { "word": "never do", "meaning": "（it will never do で）それではだめだ、よくない" }
+      ],
       "structure": "前の文と同様、独り言の間に地の文の説明が挿入される構造。\"it'll never do to ask\" のitは形式主語（to askが真主語）。"
     },
     {
@@ -184,6 +245,7 @@
       "words": [
         { "word": "down", "meaning": "下へ（繰り返しの強調）" }
       ],
+      "glossary": [],
       "structure": "単語の3回繰り返しのみで、落下の長さを表現している。"
     },
     {
@@ -194,6 +256,7 @@
       "words": [
         { "word": "nothing else to do", "meaning": "他にすることが何もない" }
       ],
+      "glossary": [],
       "structure": "soは「だから」という結果を表す等位接続詞。"
     },
     {
@@ -205,6 +268,11 @@
         { "word": "miss", "meaning": "~がいなくて寂しく思う" },
         { "word": "I should think", "meaning": "~だと思うわ" },
         { "word": "I wish you were", "meaning": "あなたが~だったらいいのに（仮定法過去）" }
+      ],
+      "glossary": [
+        { "word": "to-night", "meaning": "今夜（tonight の古いつづり）" },
+        { "word": "saucer", "meaning": "受け皿、小皿" },
+        { "word": "bat", "meaning": "コウモリ" }
       ],
       "structure": "\"I wish you were down here\" は仮定法過去（現実とは異なる願望を表す）。"
     },
@@ -218,6 +286,9 @@
         { "word": "it didn't much matter", "meaning": "大して問題ではなかった" },
         { "word": "either question", "meaning": "どちらの質問も" }
       ],
+      "glossary": [
+        { "word": "dreamy", "meaning": "夢見心地の、ぼんやりした" }
+      ],
       "structure": "for以下は理由を表す節。it didn't matter which way she put it は形式主語構文（which way以下が真主語）。"
     },
     {
@@ -229,6 +300,12 @@
         { "word": "doze off", "meaning": "うとうとする" },
         { "word": "come upon", "meaning": "~の上に落ちる、出くわす" },
         { "word": "a heap of", "meaning": "~の山" }
+      ],
+      "glossary": [
+        { "word": "dozing", "meaning": "うとうとしている（doze の -ing 形）" },
+        { "word": "earnestly", "meaning": "真剣に、熱心に" },
+        { "word": "thump", "meaning": "ドスン（重い物が落ちる音）" },
+        { "word": "heap", "meaning": "山、積み重なり" }
       ],
       "structure": "\"when suddenly\" は「ちょうどその時、突然」という劇的な転換を表す。down she came は倒置（she came downの倒置形）。"
     },
@@ -242,6 +319,10 @@
         { "word": "on to her feet", "meaning": "立ち上がって" },
         { "word": "in sight", "meaning": "見えるところに" }
       ],
+      "glossary": [
+        { "word": "overhead", "meaning": "頭上に" },
+        { "word": "passage", "meaning": "通路、廊下" }
+      ],
       "structure": "\"before her was another long passage\" は倒置構文（本来はAnother long passage was before her）。"
     },
     {
@@ -253,6 +334,9 @@
         { "word": "not a moment to be lost", "meaning": "一刻の猶予もない" },
         { "word": "away went Alice", "meaning": "倒置：Alice went away" },
         { "word": "just in time to", "meaning": "ちょうど間に合って~する" }
+      ],
+      "glossary": [
+        { "word": "whiskers", "meaning": "（動物の）ひげ" }
       ],
       "structure": "\"away went Alice\" は倒置による強調（本来はAlice went away like the wind）。"
     },
@@ -266,6 +350,9 @@
         { "word": "find oneself in", "meaning": "気づくと~にいる" },
         { "word": "a row of", "meaning": "一列の" }
       ],
+      "glossary": [
+        { "word": "lit", "meaning": "照らされた（light の過去分詞）" }
+      ],
       "structure": "\"no longer to be seen\" は \"no longer could be seen\" に近い意味の不定詞受動表現。"
     },
     {
@@ -278,6 +365,7 @@
         { "word": "all the way", "meaning": "端から端まで" },
         { "word": "how she was ever to", "meaning": "一体どうやって~すればよいのか" }
       ],
+      "glossary": [],
       "structure": "\"how she was ever to get out\" のeverは疑問詞を強調する用法で「一体どうやって」という意味。"
     },
     {
@@ -289,6 +377,11 @@
         { "word": "come upon", "meaning": "~に出くわす" },
         { "word": "solid glass", "meaning": "純粋なガラス" },
         { "word": "at any rate", "meaning": "とにかく、いずれにせよ" }
+      ],
+      "glossary": [
+        { "word": "three-legged", "meaning": "三本脚の" },
+        { "word": "solid", "meaning": "中身の詰まった、（ガラスなどが）むくの" },
+        { "word": "alas", "meaning": "ああ、悲しいかな（古風な嘆きの言葉）" }
       ],
       "structure": "\"either A were too large, or B was too small\" の相関構文。"
     },
@@ -302,6 +395,10 @@
         { "word": "to her great delight", "meaning": "大喜びしたことに" },
         { "word": "fit", "meaning": "ぴったり合う" }
       ],
+      "glossary": [
+        { "word": "inches", "meaning": "インチ（inch の複数形。1インチ＝約2.5cm）" },
+        { "word": "delight", "meaning": "大喜び" }
+      ],
       "structure": "\"behind it was a little door\" は倒置（本来はA little door was behind it）。"
     },
     {
@@ -313,6 +410,10 @@
         { "word": "lead into", "meaning": "~に通じる" },
         { "word": "not much larger than", "meaning": "~とそれほど大きく変わらない" },
         { "word": "the loveliest garden you ever saw", "meaning": "これまで見た中で一番美しい庭" }
+      ],
+      "glossary": [
+        { "word": "rat-hole", "meaning": "ネズミの穴" },
+        { "word": "knelt", "meaning": "ひざまずいた（kneel の過去形）" }
       ],
       "structure": "\"the loveliest garden you ever saw\" は関係詞thatの省略（the loveliest garden that you ever saw）で最上級を強調する口語表現。"
     },
@@ -326,6 +427,14 @@
         { "word": "of little use", "meaning": "ほとんど役に立たない" },
         { "word": "shut up like a telescope", "meaning": "望遠鏡のように縮む" }
       ],
+      "glossary": [
+        { "word": "longed", "meaning": "切望した（long to 〜で「〜したくてたまらない」）" },
+        { "word": "wander", "meaning": "歩き回る、ぶらつく" },
+        { "word": "beds", "meaning": "花壇（bed の複数形。「ベッド」ではない）" },
+        { "word": "fountains", "meaning": "噴水（fountain の複数形）" },
+        { "word": "doorway", "meaning": "戸口、出入り口" },
+        { "word": "telescope", "meaning": "（伸縮式の）望遠鏡" }
+      ],
       "structure": "\"How she longed to...\" は感嘆文（howが程度を強調）。\"if I only knew how to begin\" は仮定法過去（現実には方法を知らない）。"
     },
     {
@@ -337,6 +446,10 @@
         { "word": "out-of-the-way", "meaning": "奇妙な、普通でない" },
         { "word": "lately", "meaning": "最近" },
         { "word": "very few", "meaning": "ごくわずかしか~ない" }
+      ],
+      "glossary": [
+        { "word": "out-of-the-way", "meaning": "風変わりな、普通でない" },
+        { "word": "lately", "meaning": "最近、近ごろ" }
       ],
       "structure": "\"so many...that...\" の結果構文。過去完了(had happened, had begun)で、それ以前からの継続的な変化を表す。"
     },
@@ -350,6 +463,9 @@
         { "word": "half hoping", "meaning": "半ば期待しながら" },
         { "word": "round the neck of", "meaning": "~の首の周りに" }
       ],
+      "glossary": [
+        { "word": "label", "meaning": "ラベル、札" }
+      ],
       "structure": "\"half hoping she might find...\" は分詞構文。round the neck of the bottle was a paper label は倒置(A paper label was round the neck of the bottle)。"
     },
     {
@@ -361,6 +477,7 @@
         { "word": "it is all very well to", "meaning": "~するのは結構なことだが" },
         { "word": "in a hurry", "meaning": "急いで、慌てて" }
       ],
+      "glossary": [],
       "structure": "\"It was all very well to say A, but B\" で「Aと言うのは簡単だが、実際はB」という対比を表す口語表現。"
     },
     {
@@ -372,6 +489,14 @@
         { "word": "would not", "meaning": "どうしても~しようとしなかった（強い拒絶のwould）" },
         { "word": "such as", "meaning": "たとえば" },
         { "word": "disagree with", "meaning": "~に合わない、体に障る" }
+      ],
+      "glossary": [
+        { "word": "poison", "meaning": "毒" },
+        { "word": "beasts", "meaning": "獣（beast の複数形）" },
+        { "word": "red-hot", "meaning": "真っ赤に焼けた" },
+        { "word": "poker", "meaning": "火かき棒" },
+        { "word": "bleeds", "meaning": "出血する（bleed の3単現）" },
+        { "word": "disagree", "meaning": "（disagree with 人で）〜の体に合わない" }
       ],
       "structure": "forは理由を表す接続詞。\"such as...\" 以下で具体例が列挙される。\"it is almost certain to disagree with you\" のitは形式主語。"
     },
@@ -385,6 +510,13 @@
         { "word": "finding it very nice", "meaning": "分詞構文：それが美味しいと分かって" },
         { "word": "finish off", "meaning": "飲み干す、食べ尽くす" }
       ],
+      "glossary": [
+        { "word": "ventured", "meaning": "思い切って〜した（venture to 〜）" },
+        { "word": "flavour", "meaning": "風味、味（flavor のイギリス式つづり）" },
+        { "word": "cherry-tart", "meaning": "サクランボのタルト" },
+        { "word": "custard", "meaning": "カスタード" },
+        { "word": "toffee", "meaning": "タフィー（キャラメルに似た菓子）" }
+      ],
       "structure": "\"finding it very nice\" は分詞構文（and she found it very nice, and...）。挿入句(it had...toast)が具体的な風味を説明する。"
     },
     {
@@ -395,6 +527,9 @@
       "words": [
         { "word": "curious", "meaning": "奇妙な、不思議な" },
         { "word": "must be -ing", "meaning": "きっと~しているに違いない" }
+      ],
+      "glossary": [
+        { "word": "curious", "meaning": "奇妙な、不思議な（「好奇心の強い」ではない）" }
       ],
       "structure": "What a curious feeling! は感嘆文。must be shutting up は現在進行中の推量を表す。"
     },
@@ -408,6 +543,9 @@
         { "word": "at the thought that", "meaning": "~だと思うと" },
         { "word": "the right size for", "meaning": "~するのにちょうど良い大きさ" }
       ],
+      "glossary": [
+        { "word": "brightened", "meaning": "明るくなった（brighten の過去形）" }
+      ],
       "structure": "\"at the thought that S+V\" は「~だと思って」という理由を表す表現。"
     },
     {
@@ -419,6 +557,10 @@
         { "word": "shrink any further", "meaning": "これ以上縮む" },
         { "word": "go out", "meaning": "消える、なくなる" },
         { "word": "what she should be like", "meaning": "自分がどうなってしまうか" }
+      ],
+      "glossary": [
+        { "word": "shrink", "meaning": "縮む" },
+        { "word": "altogether", "meaning": "すっかり、完全に" }
       ],
       "structure": "\"to see if...\" は目的を表す不定詞。\"it might end...in my going out altogether\" のinは「結局~という結果になる」という意味。"
     },
@@ -432,6 +574,10 @@
         { "word": "blown out", "meaning": "吹き消された" },
         { "word": "could not remember ever -ing", "meaning": "一度も~した覚えがない" }
       ],
+      "glossary": [
+        { "word": "fancy", "meaning": "想像する、思い描く" },
+        { "word": "flame", "meaning": "炎" }
+      ],
       "structure": "forは理由節。having seen は動名詞の完了形で、「(それ以前に)見たこと」を表す。"
     },
     {
@@ -443,6 +589,11 @@
         { "word": "decide on -ing", "meaning": "~することに決める" },
         { "word": "could not possibly", "meaning": "どうしても~できない" },
         { "word": "tire oneself out", "meaning": "すっかり疲れ果てる" }
+      ],
+      "glossary": [
+        { "word": "alas", "meaning": "ああ、悲しいかな" },
+        { "word": "plainly", "meaning": "はっきりと" },
+        { "word": "slippery", "meaning": "滑りやすい" }
       ],
       "structure": "\"finding that...\" は分詞構文。\"alas for poor Alice!\" は感嘆表現。"
     },
@@ -456,6 +607,9 @@
         { "word": "leave off", "meaning": "やめる" },
         { "word": "this minute", "meaning": "今すぐ" }
       ],
+      "glossary": [
+        { "word": "sharply", "meaning": "厳しく、きつい口調で" }
+      ],
       "structure": "\"there's no use in -ing\" は無駄・無益を表す構文。"
     },
     {
@@ -467,6 +621,15 @@
         { "word": "so severely as to", "meaning": "あまりに厳しく~ので…" },
         { "word": "for having cheated", "meaning": "ズルをしたことに対して" },
         { "word": "be fond of -ing", "meaning": "~するのが好きだ" }
+      ],
+      "glossary": [
+        { "word": "seldom", "meaning": "めったに〜ない" },
+        { "word": "scolded", "meaning": "叱った（scold の過去形）" },
+        { "word": "severely", "meaning": "厳しく" },
+        { "word": "box", "meaning": "（box one's ears で）〜の横っ面を張る" },
+        { "word": "cheated", "meaning": "ずるをした（cheat の過去分詞）" },
+        { "word": "croquet", "meaning": "クロッケー（木づちで球を打つ芝生の遊び）" },
+        { "word": "curious", "meaning": "奇妙な、変わった" }
       ],
       "structure": "\"so...as to...\" は結果構文（so...that...とほぼ同じ）。forは理由節。"
     },
@@ -480,6 +643,10 @@
         { "word": "respectable", "meaning": "まともな、きちんとした" },
         { "word": "hardly enough", "meaning": "ほとんど足りない" }
       ],
+      "glossary": [
+        { "word": "hardly", "meaning": "ほとんど〜ない" },
+        { "word": "respectable", "meaning": "ちゃんとした、まともな" }
+      ],
       "structure": "\"there's hardly enough of me left to make one respectable person\" は「まともな一人前を作るのにほとんど自分が残っていない」という比喩的表現。"
     },
     {
@@ -490,6 +657,9 @@
       "words": [
         { "word": "her eye fell on", "meaning": "彼女の目は~に留まった" },
         { "word": "currant", "meaning": "小粒の干しぶどう" }
+      ],
+      "glossary": [
+        { "word": "currants", "meaning": "小粒の干しぶどう（currant の複数形）" }
       ],
       "structure": "\"on which the words...were marked\" は関係代名詞whichが前のcakeを説明する非制限用法に近い形。"
     },
@@ -503,6 +673,9 @@
         { "word": "creep under", "meaning": "~の下をくぐる" },
         { "word": "either way", "meaning": "どちらにしても" }
       ],
+      "glossary": [
+        { "word": "creep", "meaning": "はう、そっと進む" }
+      ],
       "structure": "\"if A, ...; and if B, ...\" という2つの仮定が並列される構文。"
     },
     {
@@ -515,6 +688,10 @@
         { "word": "get into the way of -ing", "meaning": "~するのに慣れる、~するようになる" },
         { "word": "out-of-the-way things", "meaning": "奇妙なこと" }
       ],
+      "glossary": [
+        { "word": "anxiously", "meaning": "心配そうに" },
+        { "word": "dull", "meaning": "退屈な、つまらない" }
+      ],
       "structure": "\"so much...that...\" の結果構文。holding her hand... は分詞構文。"
     },
     {
@@ -526,6 +703,7 @@
         { "word": "set to work", "meaning": "取りかかる" },
         { "word": "finish off", "meaning": "食べ終える、平らげる" }
       ],
+      "glossary": [],
       "structure": "soは「そこで」という結果を表す接続詞。"
     }
   ]

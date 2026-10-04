@@ -49,7 +49,15 @@
 
       <div id="sentence-en" class="sentence-en"></div>
 
-      <button id="btn-translate" type="button" class="btn-translate">翻訳</button>
+      <div class="reader-actions">
+        <button id="btn-translate" type="button" class="btn-translate">翻訳</button>
+        <button id="btn-words" type="button" class="btn-words">単語</button>
+      </div>
+
+      <div id="words-panel" class="translation-panel" hidden>
+        <h3>単語の意味</h3>
+        <ul id="glossary-words" class="words-list"></ul>
+      </div>
 
       <div id="translation-panel" class="translation-panel" hidden>
         <h3>和訳</h3>

@@ -192,8 +192,35 @@ input[type="file"] {
   min-height: 3em;
 }
 
-.btn-translate {
+.reader-actions {
+  display: flex;
+  gap: 10px;
   margin-top: 20px;
+}
+
+.glossed-word {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.btn-words {
+  padding: 12px 24px;
+  min-height: 48px;
+  font-size: 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.btn-words:hover {
+  background: var(--color-bg);
+}
+
+.btn-translate {
   padding: 12px 24px;
   min-height: 48px;
   font-size: 1rem;
@@ -384,8 +411,9 @@ input[type="file"] {
     padding: 24px 18px;
   }
 
-  .btn-translate {
-    width: 100%;
+  .btn-translate,
+  .btn-words {
+    flex: 1;
   }
 
   .translation-panel {

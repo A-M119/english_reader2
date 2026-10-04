@@ -100,8 +100,36 @@ function renderLibraryList(books, onSelect) {
   container.appendChild(list);
 }
 
-function renderSentence(sentence) {
-  document.getElementById("sentence-en").textContent = sentence.en;
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// 原文を描画する。highlightWords を渡すと、該当する単語（単語単位・大文字小文字無視）に下線を付ける
+function renderSentence(sentence, highlightWords) {
+  const el = document.getElementById("sentence-en");
+  clearChildren(el);
+
+  const ranges = [];
+  (highlightWords || []).forEach((word) => {
+    const re = new RegExp(`(?<![A-Za-z])${escapeRegExp(word)}(?![A-Za-z])`, "gi");
+    let m;
+    while ((m = re.exec(sentence.en)) !== null) {
+      ranges.push([m.index, m.index + m[0].length]);
+    }
+  });
+  ranges.sort((a, b) => a[0] - b[0]);
+
+  let pos = 0;
+  ranges.forEach(([start, end]) => {
+    if (start < pos) return; // 重なりは先勝ち
+    el.appendChild(document.createTextNode(sentence.en.slice(pos, start)));
+    const mark = document.createElement("span");
+    mark.className = "glossed-word";
+    mark.textContent = sentence.en.slice(start, end);
+    el.appendChild(mark);
+    pos = end;
+  });
+  el.appendChild(document.createTextNode(sentence.en.slice(pos)));
 }
 
 function renderProgress(currentIndex, total, title) {
@@ -111,14 +139,11 @@ function renderProgress(currentIndex, total, title) {
   document.getElementById("progress-bar").style.width = `${pct}%`;
 }
 
-function renderTranslationPanel(sentence, bookTitle, onAddVocab) {
-  const jaEl = document.getElementById("translation-ja");
-  jaEl.textContent = sentence.ja || "（和訳データがありません）";
-
-  const wordsEl = document.getElementById("translation-words");
-  clearChildren(wordsEl);
-  if (sentence.words && sentence.words.length > 0) {
-    sentence.words.forEach((w) => {
+// 単語リスト（「わからない」ボタン付き）を描画する
+function renderWordList(listEl, words, emptyText, sentence, bookTitle, onAddVocab) {
+  clearChildren(listEl);
+  if (words && words.length > 0) {
+    words.forEach((w) => {
       const li = document.createElement("li");
 
       const text = document.createElement("span");
@@ -142,13 +167,21 @@ function renderTranslationPanel(sentence, bookTitle, onAddVocab) {
 
       li.appendChild(text);
       li.appendChild(btn);
-      wordsEl.appendChild(li);
+      listEl.appendChild(li);
     });
   } else {
     const li = document.createElement("li");
-    li.textContent = "（単語データがありません）";
-    wordsEl.appendChild(li);
+    li.textContent = emptyText;
+    listEl.appendChild(li);
   }
+}
+
+function renderTranslationPanel(sentence, bookTitle, onAddVocab) {
+  const jaEl = document.getElementById("translation-ja");
+  jaEl.textContent = sentence.ja || "（和訳データがありません）";
+
+  const wordsEl = document.getElementById("translation-words");
+  renderWordList(wordsEl, sentence.words, "（単語データがありません）", sentence, bookTitle, onAddVocab);
 
   const structureEl = document.getElementById("translation-structure");
   structureEl.textContent = sentence.structure || "（文構造データがありません）";
@@ -157,6 +190,19 @@ function renderTranslationPanel(sentence, bookTitle, onAddVocab) {
 function setTranslationPanelVisible(visible) {
   document.getElementById("translation-panel").hidden = !visible;
   document.getElementById("btn-translate").textContent = visible ? "翻訳を閉じる" : "翻訳";
+}
+
+// 単語パネル（和訳・文構造なしで単語の意味だけ）を描画する。
+// glossary が無い本では words（熟語・表現メモ）で代用する
+function renderWordsPanel(sentence, bookTitle, onAddVocab) {
+  const words = sentence.glossary || sentence.words;
+  const emptyText = sentence.glossary ? "（この文に難しい単語はありません）" : "（単語データがありません）";
+  renderWordList(document.getElementById("glossary-words"), words, emptyText, sentence, bookTitle, onAddVocab);
+}
+
+function setWordsPanelVisible(visible) {
+  document.getElementById("words-panel").hidden = !visible;
+  document.getElementById("btn-words").textContent = visible ? "単語を閉じる" : "単語";
 }
 
 function renderVocabList(vocab, onDelete) {
@@ -213,6 +259,8 @@ const Render = {
   renderProgress,
   renderTranslationPanel,
   setTranslationPanelVisible,
+  renderWordsPanel,
+  setWordsPanelVisible,
   renderVocabList,
   showView,
 };

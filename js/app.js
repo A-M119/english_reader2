@@ -4,14 +4,27 @@ const state = {
   book: null, // { title, sentences }
   currentIndex: 0,
   translationVisible: false,
+  wordsVisible: false,
 };
 
+function currentSentence() {
+  return state.book.sentences[state.currentIndex];
+}
+
+// 単語パネル表示中は、原文中の該当単語に下線を付ける
+function renderSentenceText() {
+  const sentence = currentSentence();
+  const highlight = state.wordsVisible ? (sentence.glossary || sentence.words).map((w) => w.word) : [];
+  Render.renderSentence(sentence, highlight);
+}
+
 function renderCurrentSentence() {
-  const sentence = state.book.sentences[state.currentIndex];
-  Render.renderSentence(sentence);
-  Render.renderProgress(state.currentIndex, state.book.sentences.length, state.book.title);
   state.translationVisible = false;
+  state.wordsVisible = false;
+  renderSentenceText();
+  Render.renderProgress(state.currentIndex, state.book.sentences.length, state.book.title);
   Render.setTranslationPanelVisible(false);
+  Render.setWordsPanelVisible(false);
   Storage.saveBookProgress(state.book.title, state.currentIndex, state.book.sentences.length);
   updateNavButtons();
 }
@@ -95,12 +108,20 @@ function wireEvents() {
   });
 
   document.getElementById("btn-translate").addEventListener("click", () => {
-    const sentence = state.book.sentences[state.currentIndex];
     state.translationVisible = !state.translationVisible;
     if (state.translationVisible) {
-      Render.renderTranslationPanel(sentence, state.book.title, handleAddVocab);
+      Render.renderTranslationPanel(currentSentence(), state.book.title, handleAddVocab);
     }
     Render.setTranslationPanelVisible(state.translationVisible);
+  });
+
+  document.getElementById("btn-words").addEventListener("click", () => {
+    state.wordsVisible = !state.wordsVisible;
+    if (state.wordsVisible) {
+      Render.renderWordsPanel(currentSentence(), state.book.title, handleAddVocab);
+    }
+    Render.setWordsPanelVisible(state.wordsVisible);
+    renderSentenceText();
   });
 
   document.getElementById("btn-next").addEventListener("click", () => {

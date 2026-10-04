@@ -67,6 +67,15 @@ conversation instead of a pipeline.
       - `words`: 3-5 notable vocabulary items, phrasal verbs, or idioms from
         that sentence with a short Japanese gloss. Skip trivial words. Skip
         this array (or leave it short) for very simple sentences.
+      - `glossary`: single-word glosses shown by the reader's 「単語」
+        button (meanings only, no translation). Include every word above
+        roughly 英検2級 / CEFR B1 level, plus basic words used in an
+        unusual sense in context (bank = 土手, well = 井戸, curious = 奇妙な).
+        Write `word` exactly as it appears in `en` (the app underlines
+        matches, case-insensitive, whole word); for inflected forms, name
+        the base form in `meaning` (e.g. "peeped" → "のぞき見た（peep の過去分詞）").
+        If a word appears more than once with different senses, use a
+        short phrase instead ("never do"). Use `[]` when nothing qualifies.
       - `structure`: 1-3 sentences (in Japanese) naming the non-obvious
         grammar at play — inversion, subjunctive, a formal-subject `it`,
         an elliptical clause, etc. Don't restate what's already obvious from
