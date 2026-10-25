@@ -26,6 +26,7 @@ function normalizeBookData(data) {
       words: Array.isArray(s.words) ? s.words : [],
       glossary: Array.isArray(s.glossary) ? s.glossary : null,
       structure: typeof s.structure === "string" ? s.structure : null,
+      parse: s.parse && Array.isArray(s.parse.tokens) ? s.parse : null,
     })),
   };
 }

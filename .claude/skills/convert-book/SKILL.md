@@ -13,7 +13,7 @@ is that authored process, formalized so it doesn't need to be re-explained
 each time.
 
 Read `docs/json-format.md` first — it defines the exact JSON schema
-(`title` + `sentences[]`, each with `en`/`ja`/`words`/`structure`) that the
+(`title` + `sentences[]`, each with `en`/`ja`/`words`/`glossary`/`structure`/`parse`) that the
 app consumes. Everything below produces data in that shape.
 
 ## Why this is manual, not scripted
@@ -64,12 +64,14 @@ conversation instead of a pipeline.
         underscores).
       - `ja`: a natural, faithful Japanese translation — not a paraphrase,
         not overly literal either.
-      - `words`: 3-5 notable vocabulary items, phrasal verbs, or idioms from
-        that sentence with a short Japanese gloss. Skip trivial words. Skip
-        this array (or leave it short) for very simple sentences.
+      - `words`: every notable phrasal verb, idiom, set phrase, or
+        construction in the sentence (e.g. "so ~ that", "for fear of -ing",
+        "make O + 原形") with a short Japanese gloss. No upper limit — list
+        them all; leave it short only for very simple sentences.
       - `glossary`: single-word glosses shown by the reader's 「単語」
         button (meanings only, no translation). Include every word above
-        roughly 英検2級 / CEFR B1 level, plus basic words used in an
+        roughly TOEIC 450 / 英検3級〜準2級 / CEFR A2 level — i.e. anything
+        beyond basic junior-high vocabulary — plus basic words used in an
         unusual sense in context (bank = 土手, well = 井戸, curious = 奇妙な).
         Write `word` exactly as it appears in `en` (the app underlines
         matches, case-insensitive, whole word); for inflected forms, name
@@ -81,6 +83,15 @@ conversation instead of a pipeline.
         an elliptical clause, etc. Don't restate what's already obvious from
         the translation.
 
+      - `parse`: shown by the 「構造」 button. List **every** word of
+        `en` in order as `tokens` (`{w, pos, role, c}`) plus a
+        `clauses` array explaining each clause in Japanese. Follow the
+        rules in `docs/json-format.md` → "`parse`" exactly (POS
+        abbreviations, infinitive "to" = 前, aux + verb grouped into one V,
+        subordinate clauses get their own clause number). Look at a few
+        sentences of `books/alice-in-wonderland.json` first to stay
+        consistent with how it was done there.
+
    c. Append the finished sentences to the book's JSON file at
       `books/<slug>.json` (create it with `{"title": "...", "sentences": []}`
       on the first chapter). Continue the `id` sequence across chapters.
@@ -88,7 +99,14 @@ conversation instead of a pipeline.
       sentence is fine for your own bookkeeping — the app ignores unknown
       fields — but is not required by the schema.
 
-   d. Validate the file parses: `node -e "require('./books/<slug>.json')"`.
+   d. Reformat and validate:
+      ```
+      node scripts/format-book.js books/<slug>.json
+      node scripts/check-book.js books/<slug>.json
+      ```
+      `check-book.js` catches tokens out of order, words with no `pos`,
+      bad abbreviations, and `glossary` words not found in `en`. Fix
+      everything it reports before moving on.
 
 4. **Test in the app after the first chapter, then periodically.** Load
    `books/<slug>.json` in `index.html` (a local static server or even

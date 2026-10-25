@@ -47,11 +47,146 @@
         <div id="progress-bar" class="progress-bar"></div>
       </div>
 
+      <div id="parse-legend" class="parse-legend" hidden>
+        <ul id="parse-roles" class="parse-roles"></ul>
+        <p class="parse-pos-legend">品詞：名=名詞 代=代名詞 動=動詞 助=助動詞 形=形容詞 副=副詞 冠=冠詞 前=前置詞 接=接続詞 間=間投詞</p>
+      </div>
+
       <div id="sentence-en" class="sentence-en"></div>
 
       <div class="reader-actions">
         <button id="btn-translate" type="button" class="btn-translate">翻訳</button>
         <button id="btn-words" type="button" class="btn-words">単語</button>
+        <button id="btn-parse" type="button" class="btn-words">構造</button>
+        <button id="btn-supplement" type="button" class="btn-words">補足</button>
+      </div>
+
+      <div id="supplement-panel" class="translation-panel supplement-panel" hidden>
+        <h3>文の成分</h3>
+        <details class="supp-item">
+          <summary>S 主語（主部）</summary>
+          <p>「〜は／〜が」にあたる部分。名詞・代名詞、またはそのカタマリ（the girl with blue eyes など）がなる。</p>
+        </details>
+        <details class="supp-item">
+          <summary>V 述語動詞</summary>
+          <p>「〜する／〜である」にあたる部分。1つの節に必ず1つある。助動詞＋動詞（will go / was reading / had peeped）はまとめて1つの V と考える。</p>
+        </details>
+        <details class="supp-item">
+          <summary>O 目的語</summary>
+          <p>「〜を／〜に」にあたる部分。動詞の直後に置かれる名詞・代名詞。</p>
+        </details>
+        <details class="supp-item">
+          <summary>C 補語</summary>
+          <p>S や O が「何なのか・どんな状態か」を説明する部分。名詞か形容詞がなる。S = C（She is <u>happy</u>）、O = C（They call him <u>Tom</u>）の関係になる。</p>
+        </details>
+        <details class="supp-item">
+          <summary>M 修飾語</summary>
+          <p>なくても文が成り立つ、おまけの情報。副詞や「前置詞＋名詞」（in the room / on Monday）がなる。</p>
+        </details>
+        <details class="supp-item">
+          <summary>5つの文型</summary>
+          <ul>
+          <li>第1文型 SV：Birds <u>fly</u>.</li>
+          <li>第2文型 SVC：She <u>is</u> happy.（S = C）</li>
+          <li>第3文型 SVO：I <u>read</u> a book.</li>
+          <li>第4文型 SVOO：He <u>gave</u> me a book.（OにOを）</li>
+          <li>第5文型 SVOC：They <u>call</u> him Tom.（O = C）</li>
+          </ul>
+          <p>TOEICのヒント：文に V がまだ無ければ空欄には動詞が入る。V がすでにあれば、空欄は動詞以外（または節をつなぐ接続詞）。</p>
+        </details>
+
+        <h3>品詞の見分け方</h3>
+        <details class="supp-item">
+          <summary>名詞</summary>
+          <p><strong>役割：</strong>人・物・事の名前。主語・目的語・補語になる。</p>
+          <p><strong>語尾で見分ける：</strong>-tion, -sion, -ment, -ness, -ity, -ance, -ence, -ship, -er / -or / -ist（人）</p>
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>冠詞・所有格・形容詞の後（the <u>decision</u>, his <u>success</u>）</li><li>前置詞の後（for <u>approval</u>）</li><li>主語・目的語の位置</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>代名詞</summary>
+          <p><strong>役割：</strong>名詞の代わり。形（格）で役割が決まる。</p>
+          <p><strong>語尾で見分ける：</strong>I / my / me / mine / myself のように、同じ語でも形が変わる</p>
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>主語の位置 → 主格（they）</li><li>名詞の前 → 所有格（their office）</li><li>動詞・前置詞の後 → 目的格（them）</li><li>「自分で」「自分自身を」→ 再帰代名詞（by themselves）</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>動詞</summary>
+          <p><strong>役割：</strong>動作や状態を表す。文の V になる。</p>
+          <p><strong>語尾で見分ける：</strong>-ize, -ify, -ate, -en（widen など）</p>
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>主語の後</li><li>助動詞・to の後は原形（will <u>expand</u>, to <u>expand</u>）</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>助動詞</summary>
+          <p><strong>役割：</strong>動詞の前に置いて意味を足す（can / will / may / must / should）。be・have・do も進行形・完了形・疑問文を作るときは助動詞。</p>
+          
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>動詞の前。後ろの動詞は必ず原形</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>形容詞</summary>
+          <p><strong>役割：</strong>名詞を説明する（どんな？）。</p>
+          <p><strong>語尾で見分ける：</strong>-ful, -ous, -ive, -able / -ible, -al, -ic, -less, -y</p>
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>冠詞と名詞の間（a <u>successful</u> plan）</li><li>be動詞の後（is <u>available</u>）</li><li>become / seem / remain の後</li><li>make / keep / find + O + ___（keep the room <u>clean</u>）</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>副詞</summary>
+          <p><strong>役割：</strong>名詞以外（動詞・形容詞・副詞・文全体）を説明する。</p>
+          <p><strong>語尾で見分ける：</strong>形容詞 + -ly（quickly, carefully）。ただし friendly, costly, likely, lovely は -ly でも形容詞なので注意</p>
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>be動詞 + ___ + 過去分詞 / -ing（is <u>carefully</u> designed）</li><li>助動詞と動詞の間（will <u>significantly</u> increase）</li><li>形容詞の前（<u>extremely</u> high）</li><li>文が完成した後（finished the work <u>quickly</u>）</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>冠詞</summary>
+          <p><strong>役割：</strong>a / an / the の3つだけ。「この後に名詞が来る」という合図。</p>
+          
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>名詞（またはその前の形容詞）の前</li><li>a / an：初めて出る・数えられる単数　the：特定のもの</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>前置詞</summary>
+          <p><strong>役割：</strong>名詞の前に置いて、場所・時・手段などを表す（in / on / at / for / with / by / during）。</p>
+          
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>後ろは名詞（または動名詞 -ing）</li><li>前置詞と接続詞の区別がよく問われる：during（前置詞）+ 名詞、while（接続詞）+ 文。despite / although、because of / because も同じ関係</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>接続詞</summary>
+          <p><strong>役割：</strong>語と語、文と文をつなぐ。</p>
+          
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>and / but / or / so：同じ種類のもの同士をつなぐ</li><li>because / although / if / when / while：後ろに S + V の文が続く</li></ul>
+        </details>
+        <details class="supp-item">
+          <summary>間投詞</summary>
+          <p><strong>役割：</strong>感情や呼びかけを表す（oh / well / wow）。</p>
+          
+          <p><strong>置かれる位置：</strong></p>
+          <ul><li>文頭や文中に単独で置かれる。TOEICではほとんど出ない</li></ul>
+        </details>
+
+        <h3>TOEIC品詞問題の早見表</h3>
+        <p class="supp-note">まず選択肢の語尾で品詞を見分け、次に空欄の前後から入る品詞を決める。</p>
+        <table class="supp-table">
+          <tr><th>空欄の位置</th><th>入る品詞</th></tr>
+          <tr><td>the / a / 所有格 + ___ + 前置詞・動詞</td><td>名詞</td></tr>
+          <tr><td>前置詞 + ___</td><td>名詞（動名詞）</td></tr>
+          <tr><td>the / a + ___ + 名詞</td><td>形容詞</td></tr>
+          <tr><td>be動詞 + ___（後ろに何もない・前置詞）</td><td>形容詞</td></tr>
+          <tr><td>be動詞 + ___ + 過去分詞 / -ing</td><td>副詞</td></tr>
+          <tr><td>助動詞 + ___ + 動詞の原形</td><td>副詞</td></tr>
+          <tr><td>___ + 形容詞</td><td>副詞</td></tr>
+          <tr><td>文が完成した後の ___</td><td>副詞</td></tr>
+          <tr><td>___ の後ろが S + V の文</td><td>接続詞</td></tr>
+          <tr><td>___ の後ろが名詞だけ</td><td>前置詞</td></tr>
+        </table>
+      </div>
+
+      <div id="parse-panel" class="translation-panel" hidden>
+        <h3>節</h3>
+        <ol id="parse-clauses" class="parse-clauses"></ol>
       </div>
 
       <div id="words-panel" class="translation-panel" hidden>

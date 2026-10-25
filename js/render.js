@@ -108,6 +108,7 @@ function escapeRegExp(str) {
 function renderSentence(sentence, highlightWords) {
   const el = document.getElementById("sentence-en");
   clearChildren(el);
+  el.classList.remove("parsed");
 
   const ranges = [];
   (highlightWords || []).forEach((word) => {
@@ -130,6 +131,133 @@ function renderSentence(sentence, highlightWords) {
     pos = end;
   });
   el.appendChild(document.createTextNode(sentence.en.slice(pos)));
+}
+
+const PARSE_ROLES = {
+  S: "主語（主部）",
+  V: "述語動詞",
+  O: "目的語",
+  C: "補語",
+  M: "修飾語",
+};
+
+// parse.tokens の各語を原文中で順に探し、[{token, start, end}] を返す。見つからない語があれば null。
+// 語の境界は英字のみで判定するので、短縮形は they + 'll のように分けて書ける
+function locateTokens(en, tokens) {
+  const located = [];
+  let cursor = 0;
+  for (const token of tokens) {
+    const before = /^[A-Za-z]/.test(token.w) ? "(?<![A-Za-z])" : "";
+    const after = /[A-Za-z]$/.test(token.w) ? "(?![A-Za-z])" : "";
+    const re = new RegExp(`${before}${escapeRegExp(token.w)}${after}`, "g");
+    re.lastIndex = cursor;
+    const m = re.exec(en);
+    if (!m) return null;
+    located.push({ token, start: m.index, end: m.index + m[0].length });
+    cursor = m.index + m[0].length;
+  }
+  return located;
+}
+
+// 原文を「上に文の成分・下に品詞」付きの語ごとのセルで描画する。
+// 語と語の間の句読点は、空白より前なら直前の語の後ろ、空白より後なら直後の語の前に付ける。
+// 描画できない場合（データ不整合）は false を返す
+function renderParsedSentence(sentence) {
+  const located = locateTokens(sentence.en, sentence.parse.tokens);
+  if (!located || located.length === 0) return false;
+
+  const el = document.getElementById("sentence-en");
+  clearChildren(el);
+  const showClauseNo = (sentence.parse.clauses || []).length > 1;
+
+  const cells = [];
+  let prevEnd = 0;
+  let prevKey = null;
+  located.forEach(({ token, start, end }, i) => {
+    const gap = sentence.en.slice(prevEnd, start);
+    const [, before, middle, after] = gap.match(/^(\S*)(\s*(?:\S+\s+)*?\s*)(\S*)$/);
+    if (i === 0) {
+      cells.push({ prefix: gap, token });
+    } else {
+      cells[i - 1].suffix = before + middle.trim();
+      cells.push({ prefix: after, token });
+    }
+    const key = token.role ? `${token.role}${token.c || ""}` : null;
+    cells[i].showRole = key !== null && key !== prevKey;
+    prevKey = key;
+    prevEnd = end;
+  });
+  cells[cells.length - 1].suffix = sentence.en.slice(prevEnd);
+
+  cells.forEach(({ prefix, suffix, token, showRole }) => {
+    const cell = document.createElement("span");
+    // 短縮形の後半（'ll / 've など）は直前の語に詰めて表示する
+    cell.className = token.w.startsWith("'") && !prefix ? "pw pw-attached" : "pw";
+
+    const role = document.createElement("span");
+    role.className = "pw-role";
+    if (showRole) role.textContent = `${token.role}${showClauseNo && token.c ? token.c : ""}`;
+
+    const word = document.createElement("span");
+    word.className = "pw-word";
+    if (prefix) word.appendChild(document.createTextNode(prefix));
+    const core = document.createElement("span");
+    core.className = token.role ? `pw-core role-${token.role}` : "pw-core";
+    core.textContent = token.w;
+    word.appendChild(core);
+    if (suffix) word.appendChild(document.createTextNode(suffix));
+
+    const pos = document.createElement("span");
+    pos.className = "pw-pos";
+    pos.textContent = token.pos || "";
+
+    cell.appendChild(role);
+    cell.appendChild(word);
+    cell.appendChild(pos);
+    el.appendChild(cell);
+  });
+  el.classList.add("parsed");
+  return true;
+}
+
+function renderParsePanel(sentence) {
+  const rolesEl = document.getElementById("parse-roles");
+  clearChildren(rolesEl);
+  Object.entries(PARSE_ROLES).forEach(([key, label]) => {
+    const li = document.createElement("li");
+    const mark = document.createElement("span");
+    mark.className = `pw-core role-${key}`;
+    mark.textContent = key;
+    li.appendChild(mark);
+    li.appendChild(document.createTextNode(` ${label}`));
+    rolesEl.appendChild(li);
+  });
+
+  const clausesEl = document.getElementById("parse-clauses");
+  clearChildren(clausesEl);
+  const clauses = sentence.parse ? sentence.parse.clauses || [] : [];
+  if (clauses.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = sentence.parse ? "（節の説明はありません）" : "（この文には構造データがありません）";
+    clausesEl.appendChild(li);
+  }
+  clauses.forEach((c) => {
+    const li = document.createElement("li");
+    li.value = c.id;
+    li.textContent = c.label;
+    clausesEl.appendChild(li);
+  });
+}
+
+function setParsePanelVisible(visible) {
+  document.getElementById("parse-panel").hidden = !visible;
+  document.getElementById("parse-legend").hidden = !visible;
+  document.getElementById("btn-parse").textContent = visible ? "構造を閉じる" : "構造";
+}
+
+function setSupplementPanelVisible(visible) {
+  document.getElementById("supplement-panel").hidden = !visible;
+  document.getElementById("btn-supplement").textContent = visible ? "補足を閉じる" : "補足";
 }
 
 function renderProgress(currentIndex, total, title) {
@@ -261,6 +389,10 @@ const Render = {
   setTranslationPanelVisible,
   renderWordsPanel,
   setWordsPanelVisible,
+  renderParsedSentence,
+  renderParsePanel,
+  setParsePanelVisible,
+  setSupplementPanelVisible,
   renderVocabList,
   showView,
 };

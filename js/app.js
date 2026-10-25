@@ -5,6 +5,8 @@ const state = {
   currentIndex: 0,
   translationVisible: false,
   wordsVisible: false,
+  parseVisible: false,
+  supplementVisible: false, // 文に依存しない解説なので、文を移動しても開いたままにする
 };
 
 function currentSentence() {
@@ -14,6 +16,7 @@ function currentSentence() {
 // 単語パネル表示中は、原文中の該当単語に下線を付ける
 function renderSentenceText() {
   const sentence = currentSentence();
+  if (state.parseVisible && sentence.parse && Render.renderParsedSentence(sentence)) return;
   const highlight = state.wordsVisible ? (sentence.glossary || sentence.words).map((w) => w.word) : [];
   Render.renderSentence(sentence, highlight);
 }
@@ -21,10 +24,12 @@ function renderSentenceText() {
 function renderCurrentSentence() {
   state.translationVisible = false;
   state.wordsVisible = false;
+  state.parseVisible = false;
   renderSentenceText();
   Render.renderProgress(state.currentIndex, state.book.sentences.length, state.book.title);
   Render.setTranslationPanelVisible(false);
   Render.setWordsPanelVisible(false);
+  Render.setParsePanelVisible(false);
   Storage.saveBookProgress(state.book.title, state.currentIndex, state.book.sentences.length);
   updateNavButtons();
 }
@@ -122,6 +127,20 @@ function wireEvents() {
     }
     Render.setWordsPanelVisible(state.wordsVisible);
     renderSentenceText();
+  });
+
+  document.getElementById("btn-parse").addEventListener("click", () => {
+    state.parseVisible = !state.parseVisible;
+    if (state.parseVisible) {
+      Render.renderParsePanel(currentSentence());
+    }
+    Render.setParsePanelVisible(state.parseVisible);
+    renderSentenceText();
+  });
+
+  document.getElementById("btn-supplement").addEventListener("click", () => {
+    state.supplementVisible = !state.supplementVisible;
+    Render.setSupplementPanelVisible(state.supplementVisible);
   });
 
   document.getElementById("btn-next").addEventListener("click", () => {
